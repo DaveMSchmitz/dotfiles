@@ -83,7 +83,7 @@ set spellfile=~/.vim/spell/en.utf-8.add
 
 "---------- Use Template Files ----------"
 autocmd BufNewFile * execute s:template() |
-			\ execute "silent! normal! Gdd/CURSOR\<CR>dw"
+			\ execute "silent! %s/CURSOR//"
 func! s:template()
 	let templatefile = expand("~/.vim/templates/file.") . expand("%:e")
 	if filereadable(templatefile)
