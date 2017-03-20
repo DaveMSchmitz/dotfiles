@@ -81,38 +81,6 @@ set list
 set spell spelllang=en
 set spellfile=~/.vim/spell/en.utf-8.add
 
-"---------- Use Template Files ----------"
-autocmd BufNewFile * execute s:template() |
-			\ execute "silent! %s/CURSOR//"
-func! s:template()
-	let templatefile = expand("~/.vim/templates/file.") . expand("%:e")
-	if filereadable(templatefile)
-		execute "silent! 0r " . templatefile
-		execute "silent! %s/TITLE/" . expand("%:t:r") . "/g"
-		execute "silent! %s/HEADER/" . toupper(expand("%:t:r")) . "/g"
-	endif
-endfunc
-"---------- OmniComplete on keypress ----------"
-set omnifunc=syntaxcomplete#Complete
-set completeopt=noinsert,menuone
-let g:rubycomplete_buffer_loading=1
-let g:rubycomplete_classes_in_global=1
-let g:rubycomplete_rails=1
-let g:loaded_sql_completion=0
-let g:omni_sql_no_default_maps=1
-
-" Keys that trigger completeopt
-for key in split("a b c d e f g h i j k l m n o p q r s t u v w x y z " .
-			\ "A B C D E F G H I J K L M N O P Q R S T U V W X Y Z")
-	execute "inoremap <silent><expr> ".key." \"".key."\" . OpenAutocomp()"
-endfor
-func! OpenAutocomp()
-	return pumvisible() ? "" : "\<C-X>\<C-O>"
-endfunc
-
-inoremap <silent><expr> . ".\<C-X>\<C-O>"
-inoremap <silent><expr> <Tab> pumvisible() ? "\<C-N>" : "\<Tab>"
-
 "---------- Statusline ----------"
 let g:mode_map = {
 			\ '__' : '------',
