@@ -168,6 +168,10 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'sjl/gundo.vim', { 'on': ['GundoShow', 'GundoRenderGraph', 'GundoToggle'] }
 Plug 'ap/vim-css-color'
+" TMUX
+Plug 'tpope/vim-tbone'
+Plug 'tmux-plugins/vim-tmux-focus-events'
+Plug 'roxma/vim-tmux-clipboard'
 " Languages
 Plug 'keith/swift.vim', { 'for': 'swift' }
 Plug 'vim-ruby/vim-ruby', { 'for': ['ruby', 'eruby'] }
@@ -190,7 +194,7 @@ let g:NERDCommentEmptyLines=1
 let g:NERDTrimTrailingWhitespace=1
 
 " Syntastic Setup
-set statusline+=%4*%{SyntasticStatuslineFlag()}\ %*
+set statusline+=%4*%{exists('*SyntasticStatuslineFlag')?SyntasticStatuslineFlag():''}\ %*
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['java'] }
 let g:syntastic_check_on_open=1
 let g:syntastic_check_on_wq=0
