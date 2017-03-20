@@ -60,18 +60,6 @@ set display+=lastline
 
 autocmd BufWritePre * :%s/\s\+$//e
 
-
-" Use Template Files
-autocmd BufNewFile *
-\ let templatefile = expand("~/.vim/templates/") . expand("%:e")|
-\ if filereadable(templatefile)|
-\   execute "silent! 0r " . templatefile|
-\   execute "normal Gdd/CURSOR\<CR>dw"|
-\ endif|
-\ startinsert!
-
-
-
 " Remove splash
 " set shortmess=I
 
@@ -93,6 +81,17 @@ set list
 set spell spelllang=en
 set spellfile=~/.vim/spell/en.utf-8.add
 
+"---------- Use Template Files ----------"
+autocmd BufNewFile * execute s:template() |
+			\ execute "silent! normal! Gdd/CURSOR\<CR>dw"
+func! s:template()
+	let templatefile = expand("~/.vim/templates/file.") . expand("%:e")
+	if filereadable(templatefile)
+		execute "silent! 0r " . templatefile
+		execute "silent! %s/TITLE/" . expand("%:t:r") . "/g"
+		execute "silent! %s/HEADER/" . toupper(expand("%:t:r")) . "/g"
+	endif
+endfunc
 "---------- OmniComplete on keypress ----------"
 set omnifunc=syntaxcomplete#Complete
 set completeopt=noinsert,menuone
