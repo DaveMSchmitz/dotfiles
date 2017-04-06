@@ -1,0 +1,30 @@
+"*":
+  autosave:
+    enabled: true
+  core:
+    projectHome: "/Users/BrandonRoehl/workspace"
+    telemetryConsent: "limited"
+    themes: [
+      "atom-material-ui"
+      "one-dark-syntax"
+    ]
+  editor:
+    fontSize: 12
+    tabLength: 4
+  "exception-reporting":
+    userId: "d5cac5a7-3131-ea39-89d0-21be943bab7d"
+  "markdown-preview": {}
+  "platformio-ide-terminal":
+    style: {}
+    toggles:
+      autoClose: true
+  "terminal-plus":
+    core: {}
+    style: {}
+    toggles:
+      autoClose: true
+  "vim-mode-plus":
+    clearHighlightSearchOnResetNormalMode: true
+    useClipboardAsDefaultRegister: true
+  welcome:
+    showOnStartup: false

@@ -2,3 +2,4 @@
 *.swp
 installed.txt
 vim/plugged
+vim/.netrwhist

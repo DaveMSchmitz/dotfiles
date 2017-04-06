@@ -6,7 +6,7 @@ echo ' | (_| | (_) | |_|  _| | |  __/\__ \'
 echo '(_)__,_|\___/ \__|_| |_|_|\___||___/'
 git submodule init
 git submodule update --recursive
-files=( 'zshrc' 'zsh' 'bashrc' 'vimrc' 'vim' 'tmux.conf' 'profile' 'universerc' 'universe')
+files=( 'zshrc' 'zsh' 'bashrc' 'vimrc' 'vim' 'tmux.conf' 'profile' 'atom')
 for file in $files
 do
     echo ""

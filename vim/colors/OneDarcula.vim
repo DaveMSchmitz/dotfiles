@@ -90,7 +90,7 @@ hi ModeMsg    term=bold cterm=bold ctermfg=045 ctermbg=none
 hi MoreMsg    term=none cterm=none ctermfg=232 ctermbg=083
 hi WarningMsg term=none cterm=none ctermfg=232 ctermbg=216
 hi SpellBad   term=underline cterm=underline,bold ctermfg=none ctermbg=none
-hi SpellCap   term=underline cterm=underline      ctermfg=none ctermbg=none
+hi SpellCap   term=underline cterm=bold           ctermfg=none ctermbg=none
 hi link SpellRare SpellCap
 hi SpellLocal term=none cterm=none ctermfg=none ctermbg=none
 
@@ -105,6 +105,10 @@ hi SyntasticError       term=underline cterm=underline,bold ctermfg=196 ctermbg=
 hi SyntasticWarning     term=underline cterm=underline,bold ctermfg=226 ctermbg=none
 hi SyntasticErrorSign   term=standout  cterm=bold           ctermbg=235 ctermfg=196
 hi SyntasticWarningSign term=standout  cterm=bold           ctermbg=235 ctermfg=226
+hi link ALEError       SyntasticError
+hi link ALEWarning     SyntasticWarning
+hi link ALEErrorSign   SyntasticErrorSign
+hi link ALEWarningSign SyntasticWarningSign
 
 " Gitgutter coloring
 hi GitGutterAdd    cterm=none ctermbg=235 ctermfg=077
